@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D IMAGE GALLERY</title>
+
+
+    <script>
+
+window.onload = ()=> {
+
+
+   images = [
+
+    {
+        'src' : 'https://kogda-tv.ru/wp-content/uploads/2021/04/anime-magicheskaya-bitva-2-sezon-kogda-data-vyhoda-v-2022.jpg',
+        'name' : 'Магическая битва',
+        'desc' : 'Jujutsu Kaisen (яп. 呪術廻戦 дзюдзюцу кайсэн, «Магическая битва») — манга, созданная Гэгэ Акутами и публикующаяся с марта 2018 года в журнале Weekly Shōnen Jump издательства Shueisha. Позже главы были собраны и переизданы в виде танкобонов, на декабрь 2021 года вышло 18 томов[4].'
+    },
+    {
+        'src' : 'https://i.ytimg.com/vi/eyCtCb1Q5-E/maxresdefault.jpg',
+        'name' : 'Боевой континент',
+        'desc' : 'Боевой континент (кит. упр.: 斗 罗 大陆; пиньинь : Dòu Luō Dà Lù, также известен как Континент Доуло) — китайский телесериал в жанре фэнтези, снятый по мотивам романа Тан-Цзя Саньшао «Боевой континент»[1], вышедший в эфир 5 февраля 2021 года на телеканале CCTV-8. Главные роли исполнили Сяо Чжань и У Сюаньи.'
+    },
+    {
+        'src' : 'https://vkakoyserii.com/wp-content/uploads/2019/10/deathnote_62-e1569961186995.jpg',
+        'name' : 'Тетрадь смерти',
+        'desc' : 'Мангу "Тетрадь смерти" создали в декабре 2003 года в виде пилотного выпуска, и в феврале 2004 года она начала издаваться в еженедельном журнале Weekly Shonen Jump в виде сериала. Выход манги закончился в мае 2006 года. Манга содержала 108 глав, переизданных в 12 томах танкобонах в Японии. Позднее вышел 13-й том, своеобразная энциклопедия по миру «Тетради смерти».'
+    },
+    {
+        'src' : 'https://avatars.mds.yandex.net/i?id=a7c60b1d29303c2b6949ef40dd3ba999-4237119-images-thumbs&n=13',
+        'name' : 'Моя геройская академия',
+        'desc' : 'Первая глава манги вышла 7 июля 2014 года в 32-м выпуске журнала Weekly Shonen Jump[1]. Серия была лицензирована для выпуска на английском языке Viz Media и начала выходить в их еженедельном цифровом журнале Weekly Shonen Jump 9 февраля 2015 года[2'
+    },
+    {
+        'src' : 'https://avatars.mds.yandex.net/get-zen_doc/1873427/pub_6016aa3ed3c91450c64b5733_6016aa9ad3c91450c64c0fa6/scale_1200',
+        'name' : 'Клинок рассекающий демонов',
+        'desc' : 'Kimetsu no Yaiba (яп. 鬼滅の刃 Кимэцу но яиба, досл. «Клинок, уничтожающий демонов»[1]) — манга авторства Коёхару Готогэ, выпускавшаяся в журнале Weekly Shonen Jump издательства Shueisha с 15 февраля 2016 года[2] по 18 мая 2020 года[3]. По состоянию на ноябрь 2018 года общий выпуск серии превысил 3 миллиона экземпляров[4]'
+    },
+    {
+        'src' : 'https://ecdn.game4v.com/g4v-content/uploads/2021/08/game4v-tinh-than-bien-1.jpg',
+        'name' : 'Дорогой звёзд',
+        'desc' : '...'
+    },
+
+
+
+
+]
+
+
+    let x,
+    nx,
+    angle = 0;
+
+
+
+
+let currImg = 0,
+    currFace = 1;
+
+document.querySelector('.face1 .load').style.display = 'block';
+
+document.querySelector('.face1 img').src = images[0].src;
+document.querySelector('.face2 img').src = images[1].src;
+document.querySelector('.face3 img').src = images[2].src;
+document.querySelector('.face4 img').src = images[3].src;
+
+
+document.querySelector(`.details .name`).innerText = images[currImg].name;
+document.querySelector(`.details .desc`).innerText = images[currImg].desc;
+
+// detecting swipe
+
+document.querySelector('.images').ontouchstart = function(e) {
+    x = e.touches[0].clientX,
+    nx = x;
+}
+
+
+document.querySelector('.images').ontouchmove = function(e) {
+    e.preventDefault();
+    nx = e.touches[0].clientX;
+}
+
+document.querySelector('.images').ontouchend = function(e) {
+    if (nx > x) {
+        swipeRight();
+    }
+
+    if (nx < x) {
+        swipeLeft();
+    }
+}
+
+document.querySelector('.left').onclick = function() {
+
+    swipeRight();
+}
+
+document.querySelector('.right').onclick = function() {
+    swipeLeft();
+}
+
+
+function swipeRight() {
+
+    document.querySelectorAll('.load').forEach(loader => {
+        loader.style.display = 'none';
+    })
+
+
+
+    angle += 90;
+    currFace += 1;
+    currFace = (currFace > 4) ? 1 : currFace;
+    currImg += 1;
+    currImg = (currImg > images.length-1) ? 0 : currImg;
+    document.querySelector(`.face${currFace} .load`).style.display = 'block';
+    document.querySelector(`.face${currFace} img`).src = images[currImg].src;
+    document.querySelector(`.details .name`).innerText = images[currImg].name;
+    document.querySelector(`.details .desc`).innerText = images[currImg].desc;
+
+    document.querySelector('.images .image-box').style.height = '70%';
+    document.querySelector('.images .image-box').style.width = '70%';
+
+    setTimeout(()=> {
+        document.querySelector('.images .image-box').style.transform = `rotateY(${angle}deg)`;
+    },500)
+
+    setTimeout(()=> {
+        document.querySelector('.images .image-box').style.height = '100%';
+        document.querySelector('.images .image-box').style.width = '100%';
+            document.querySelector(`.face${currFace} .load`).style.display = 'block';
+    },1000)
+
+}
+
+function swipeLeft() {
+
+    document.querySelectorAll('.load').forEach(loader => {
+        loader.style.display = 'none';
+    })
+    angle -= 90;
+    currFace -= 1;
+    currFace = (currFace < 1) ? 4 : currFace;
+    currImg -= 1;
+    currImg = (currImg < 0) ? images.length-1 : currImg;
+
+    document.querySelector(`.face${currFace} img`).src = images[currImg].src;
+
+    document.querySelector(`.details .name`).innerText = images[currImg].name;
+    document.querySelector(`.details .desc`).innerText = images[currImg].desc;
+
+
+    document.querySelector('.images .image-box').style.height = '70%';
+    document.querySelector('.images .image-box').style.width = '70%';
+
+    setTimeout(()=> {
+        document.querySelector('.images .image-box').style.transform = `rotateY(${angle}deg)`;
+    },500)
+
+    setTimeout(()=> {
+        document.querySelector('.images .image-box').style.height = '100%';
+        document.querySelector('.images .image-box').style.width = '100%';
+         document.querySelector(`.face${currFace} .load`).style.display = 'block';
+    },1000)
+}
+
+}
+
+    </script>
+
+</head>
+
+<style>
+    body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    perspective: 700vmin;
+
+}
+
+.header {
+    background: #5c2c06;
+    width: 100%;
+    height: 14vmin;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+
+}
+
+.header p {
+    font-size: 5vmin;
+    font-family: sans-serif;
+    margin-top: 0;
+    line-height: 14vmin;
+    text-indent: 6vmin;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+
+.images {
+    margin-top: 14vmin;
+    width: 100vmin;
+    background:#222;
+    height: calc(100vh - 14vmin);
+    width: 100%;
+    perspective: 700vmin;
+    perspective-origin: 50% 50%;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.left,
+.right {
+    height: 10vmin;
+    width: 10vmin;
+    position: absolute;
+    top: calc(50% - 5vmin);
+    background: #2225;
+    z-index: 999;
+    color: #fff;
+    font-size: 10vmin;
+    line-height: 10vmin;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.left{
+    left: 2.5%;
+}
+
+
+.right{
+    right: 2.5%;
+}
+
+.images .image-box {
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    transition: .5s;
+}
+
+.images .image-box .face {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    line-height: 80vh;
+    text-align: center;
+    font-size: 10vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.images .image-box .face img {
+    height: 100%;
+    width: 100%;
+    z-index:2;
+    display:block;
+    position:absolute;
+}
+
+.images .image-box .face.face1 {
+    transform:translateZ(50vmin);
+}
+
+.images .image-box .face.face2 {
+    transform: rotateY(-90deg) translateZ(50vmin);
+}
+
+
+
+.images .image-box .face.face3 {
+    transform: translateZ(-50vmin) rotateY(180deg);
+
+}
+
+.images .image-box .face.face4 {
+    transform: rotateY(90deg) translateZ(50vmin);
+}
+
+
+
+
+.details {
+    height: 40vmin;
+    width: 90vmin;
+    background: #222a;
+    position: fixed;
+    bottom: 20vmin;
+    left: 55vmin;
+    z-index: 999;
+}
+
+.details .name {
+    color: #8BC34A;
+    font-size: 5vmin;
+    text-indent: 4vmin;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 4vmin;
+}
+
+.details .desc {
+    color: #fff;
+    font-size: 4vmin;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 2vmin;
+}
+
+.header a {
+    height:10vmin;
+    position:absolute;
+    display:inline-block;
+    top:2vmin;
+    right:5%;
+    font-size:5vmin;
+    font-family:sans-serif;
+    outline:none;
+    border:none;
+    background:#222;
+    color:#fff;
+    font-weight:bold;
+    padding-left:3vmin;
+    padding-right:3vmin;
+    line-height:10vmin;
+    text-decoration:none;
+}
+
+a.button {
+    position:fixed;
+    height:13vmin;
+    font-size:5vmin;
+    font-family:sans-serif;
+    outline:none;
+    border:none;
+    background:#8bc34a;
+    color:#fff;
+    font-weight:bold;
+    width:100%;
+    line-height:13vmin;
+    text-decoration:none;
+    bottom:0;
+    left:0;
+    text-align:center;
+}
+
+.load {
+    height:10vmin;
+    width:10vmin;
+    border:1vmin solid #8bc34a;
+    position:absolute;
+    top:calc(50% - 5vmin);
+    left:calc(50% - 5vmin);
+    animation:rotate 2s alternate infinite;
+    z-index:1;
+    display:none;
+}
+
+@keyframes rotate {
+    to {
+        border-radius:50%;
+        transform:rotate(360deg);
+    }
+}
+</style>
+
+
+<body>
+    <div class="header">
+        <p>Image Gallery </p>
+        <!-- <a href="https://youtu.be/otYqj7oEaJs">Learn This</a> -->
+    </div>
+
+
+
+    <div class="left">&#171;</div>
+    <div class="right">&#187;</div>
+
+    <div class="details">
+            <div class="name"></div>
+            <div class="desc"></div>
+    </div>
+
+    <div class="images">
+
+
+
+        <div class="image-box">
+
+
+            <div class="face face1">
+                <div class="load"></div>
+                <img src="">
+            </div>
+            <div class="face face2">
+                <div class="load"></div>
+                <img src="">
+            </div>
+            <div class="face face3">
+                <div class="load"></div>
+                <img src="">
+            </div>
+            <div class="face face4">
+                <div class="load"></div>
+                <img src="">
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- <a href="https://youtu.be/otYqj7oEaJs" class="button">Learn This</a> -->
+
+</body>
+</html>

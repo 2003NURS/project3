@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+
+    <style>
+body {
+    background-color: tan;
+}
+#img {
+    margin: 10px -40px;
+    transform: rotate(20deg);
+    transform-origin: 25% 75%;
+
+}
+#img2 {
+    margin: 70px 50px;
+    display: none;
+}
+#page1 {
+    height: 470px;
+    border: 2px solid black;
+    width: 300px;
+    margin: 70px 50px;
+    background-color: papayawhip;
+    display: none;
+}
+#page2 {
+    height: 470px;
+    border: 2px solid black;
+    width: 300px;
+    margin: 70px 50px;
+    background-color: papayawhip;
+    display: none;
+}
+#back {
+    height: 470px;
+    border: 2px solid black;
+    width: 300px;
+    margin: 70px 50px;
+    background-color: black;
+    display: none;
+
+}
+h3 {
+    color: white ;
+    font-family: cursive;
+    font-size: 20px;
+}
+input {
+    margin: 5px 67px;
+    font-family:cursive;
+    border-width:3px;
+    letter-spacing:3px;
+    font-weight:bolder;
+    background-color:papayawhip;
+
+}
+h2 {
+    font-family: cursive;
+}
+p {
+    font-size:10px;
+}    </style>
+
+    <body>
+        <img id="img" onclick="click1()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Death_Note%2C_Book.svg/853px-Death_Note%2C_Book.svg.png" height="500px"/>
+        <img id="img2" onclick="click2()" src="https://dl.dropbox.com/s/1ta7maqk23p1xi7/d1xmein-817388c9-3a07-45de-9f3e-015f0022100a.jpg?dl=0" height="470px"/>
+        <div id="page1">
+        <h2 align="center">Choose Carefully</h2>
+            <p id=law></p>
+        <input type=text id=inp1>
+        <p id=ex1 align="center"></p>
+            <p id=law></p>
+        <input type=text id=inp2>
+        <p id=ex2 align="center"></p>
+            <p id=law></p>
+        <input type=text id=inp3>
+        <p id=ex3 align="center"></p>
+            <p id=law></p>
+        <input type=text id=inp4>
+        <p id=ex4 align="center"></p>
+                 <p id=law></p>
+        <input type=text id=inp5>
+        <p id=ex5 align="center"></p>
+
+            <button onclick="click3()">Next</button>
+        </div>
+        <div id="page2">
+        <h2 align="center">Page 2</h2>
+            <p id=law></p>
+        <input type=text id=inp6>
+        <p id=ex6 align="center"></p>
+            <p id=law></p>
+        <input type=text id=inp7>
+        <p id=ex7 align="center"></p>
+            <p id=law></p>
+        <input type=text id=inp8>
+        <p id=ex8 align="center"></p>
+            <p id=law></p>
+        <input type=text id=inp9>
+        <p id=ex9 align="center"></p>
+                 <p id=law></p>
+        <input type=text id=inp10>
+        <p id=ex10 align="center"></p>
+            <button onclick="click4()">Next</button>
+        </div>
+        <div id="back"><h3 align="center">If you would like to return this Death Note, throw it away. Thank you.<br /> </h3><br />
+        </div>
+        <script>
+        alert("The second image may take longer to load.")
+  var person = prompt("Congratulations, you have found a Death Note. What is your name, human?");
+  if (person != null) {
+      alert("Use the Death Note wisely, " + person + ".")
+  }
+
+function click1() {
+  document.getElementById("img").style.display = "none";
+  document.getElementById("img2").style.display =
+"block"
+}
+function click2() {
+    document.getElementById("img2").style.display = "none"
+                     document.getElementById("page1").style.display = "block"
+}
+function click3() {
+    document.getElementById("page1").style.display = "none"
+    document.getElementById("page2").style.display = "block"
+
+}
+function click4() {
+    document.getElementById("page2").style.display = "none"
+    document.getElementById("back").style.display = "block"
+}
+function example1(){
+    document.getElementById("ex1").innerText=inp1.value + " is deceased";
+}
+function example2(){
+    document.getElementById("ex2").innerText=inp2.value + " is deceased";
+}
+function example3(){
+    document.getElementById("ex3").innerText=inp3.value + " is deceased";
+}
+function example4(){
+    document.getElementById("ex4").innerText=inp4.value + " is deceased";
+}
+function example5(){
+    document.getElementById("ex5").innerText=inp5.value + " is deceased";
+}
+function example6(){
+    document.getElementById("ex6").innerText=inp6.value + " is deceased";
+}
+function example7(){
+    document.getElementById("ex7").innerText=inp7.value + " is deceased";
+}
+function example8(){
+    document.getElementById("ex8").innerText=inp8.value + " is deceased";
+}
+function example9(){
+    document.getElementById("ex9").innerText=inp9.value + " is deceased";
+}
+function example10(){
+    document.getElementById("ex10").innerText=inp10.value + " is deceased";
+}
+window.onload=function(){
+    inp1.addEventListener("change",example1);
+    inp2.addEventListener("change",example2);
+    inp3.addEventListener("change",example3);
+    inp4.addEventListener("change",example4);
+    inp5.addEventListener("change",example5);
+    inp6.addEventListener("change",example6);
+    inp7.addEventListener("change",example7);
+    inp8.addEventListener("change",example8);
+    inp9.addEventListener("change",example9);
+    inp10.addEventListener("change",example10);
+}</script>
+    </body>
+</html>

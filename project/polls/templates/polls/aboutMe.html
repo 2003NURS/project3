@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me</title>
+  <style type="text/css"></style>
+</head>
+<style>
+    html{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .card, .sheet {
+  margin:80px 25px;
+  position:relative;
+  height:auto;
+  width:350px;
+  top:30px;
+  color:black;
+  font-size:18px;
+  display:flex;
+  line-height:1.5rem;
+  background:#7f9cce;
+  border-radius:20px;
+  align-items:center;
+  font-family:serif;
+  box-shadow: 2px 10px 14px #ccc;
+  }
+
+  .card{
+  height:auto;
+  width:350px;
+  margin:80px 35px;
+  }
+
+  p{
+  margin:10px 20px;
+  font-size:18px;
+  color:#333;
+  }
+
+  b{ color:black;}
+
+  i{ left:130px;
+  position:relative;
+  }
+
+
+  .dp img {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  z-index:80;
+  top:-80px;
+  margin:18px -20px;
+  position:absolute;
+  border:solid 3px #fff;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  /* text */
+  .T{
+  top:5px;
+  left:2px;
+  position:relative;
+  padding:20px 20px;
+  font-family:serif;
+  }
+
+  /* drop down list */
+  .DL{
+  width:350px;
+  background: #fff;
+  margin:50px 20px;
+  box-shadow: 2px 10px 14px #ccc;
+  }
+
+  /* list header */
+  .LH {
+  color:darkblue;
+  font-size:17px;
+  line-height: 1.25rem;
+  font-weight:400;
+  position: relative;
+  align-items:center;
+  text-align:center;
+  border:2px solid #7f9cce;
+  }
+
+  .LH:hover {
+  font-weight:bold;
+  }
+
+  summary {
+  padding:15px;
+  display: flex;
+  align-items:center;
+  text-align:center;
+  }
+
+  /* list content*/
+  .LC{
+  color:#333;
+  font-size:16px;
+  padding: ;
+  height:0 ;
+  overflow: hidden;
+  }
+
+  details[open] + .LC{
+  padding: 1rem;
+  height:auto;
+  }
+
+  li{ list-style: none;}
+
+  ul li a {
+  width: auto;
+  height: 29px;
+  display: block;
+  padding:1px;
+  text-decoration:none;
+  text-align: center;
+  font-family: Georgia,'Times New Roman',serif;
+  color:#333;
+  background: repeating-linear-gradient(#fff,#4fe992d0 100px);
+  border-bottom:2px solid #eee;
+  }
+
+  a:hover {
+  font-weight: bold;
+  left:15px;
+  width:auto;
+  color:#333;
+  padding:2px;
+  position:relative;
+  background:#95a7c8;
+  border-radius:40px;
+  border:2px solid #ccc;
+  }
+
+  progress {
+  width:250px;
+  height:20px;
+  background:light green;
+  }
+
+  /* coding experience */
+  .CE {
+  padding:1px 10px;
+  height:auto;
+  width:270px;
+  position: relative;
+  color:#333;
+  }
+
+  h2{
+  font-size:30px;
+  color:darkblue;
+  margin:30px 130px;
+  position:absolute;
+  text-shadow:1px 3px 5px #a5a0a0;
+  }
+</style>
+
+
+<body>
+
+<h2> About Me </h2>
+
+<div class="sheet">
+
+<!-- about -->
+ <div class="T">
+ <article id="text"></article>
+ </div>
+ </div>
+
+<!--drop down list -->
+ <div class="DL">
+ <!-- list header -->
+ <details class="LH">
+ <summary> 📂 Projects 📂 </summary>
+ </details>
+<!--list body -->
+ <div class="LC">
+ <ul>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/3413538/pub_61140e93945daa06bc96419a_61140fce945daa06bc9a4c19/scale_1200"> 🎸 Наруто 🎸</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/5365952/pub_61140e93945daa06bc96419a_61141064945daa06bc9c33f1/scale_2400"> 🦋 Блич 🦋</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/3310860/pub_61140e93945daa06bc96419a_61141125189dda65923f8f81/scale_1200"> ✨ Ван-пис ✨</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/5233619/pub_61140e93945daa06bc96419a_611411e98a1c5e1f3c6f4df2/scale_2400"> 🏠 Необъятный океан 🏠</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/1926194/pub_61140e93945daa06bc96419a_611412821bb82e33ef3c01f2/scale_1200"> 👰‍♀️"Ванпанчмен" 👰‍♀️</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/4457333/pub_61140e93945daa06bc96419a_611412fe1bb82e33ef3d9302/scale_1200"> 📚🍫 Врата Штейна🍫📚</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/5365952/pub_61140e93945daa06bc96419a_6114137cc7be8a07e0b78e40/scale_1200"> 🍨 Обещанный Неверленд 🍨</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/1716636/pub_61140e93945daa06bc96419a_61141401945daa06bca7d075/scale_2400"> ⚙️ Тетрадь смерти ⚙️</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/3473288/pub_61140e93945daa06bc96419a_6114147f00e2a54b2cf47e1e/scale_1200"> 📟 Стальной алхими</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/5290304/pub_61140e93945daa06bc96419a_6114150604b81d1e48a0f65d/scale_1200"> Клинок, рассекающий демонов ⏰</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/3505723/pub_61140e93945daa06bc96419a_6114156e668b916db7daa3a5/scale_1200"> 🗓️Атака титанов🗓️</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/244664/pub_61140e93945daa06bc96419a_611415e70f7aab4547f1e3a4/scale_1200"> 🤔Нет игры - нет жизн🤔</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/51081/pub_61140e93945daa06bc96419a_611416cfc7be8a07e0c16064/scale_1200"> 📟 Реинкарнация безработного: история о приключениях в другом мире 📟</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/5324345/pub_61140e93945daa06bc96419a_611416f5c7be8a07e0c1cb70/scale_1200"> Магическая битва 💯</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/4488311/pub_61140e93945daa06bc96419a_6114177bc7be8a07e0c356ca/scale_1200"> ⏱️Этот глупый свин не понимает мечту девочки-зайки⏱️</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/4467222/pub_61140e93945daa06bc96419a_6114180df9261873f6cfd1e7/scale_2400"> ⏰ Бездомный бог ⏰</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/163667/pub_61140e93945daa06bc96419a_6114188f0f7aab4547f98219/scale_1200"> 📂 91 день 📂</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/3445317/pub_61140e93945daa06bc96419a_611418f000e2a54b2c02c191/scale_1200"> Моб Психо 100 📟</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/1860332/pub_61140e93945daa06bc96419a_6114197df9261873f6d4497c/scale_1200"> 🐉Парад смерти🐉</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/174930/pub_61140e93945daa06bc96419a_611419dd04b81d1e48b03cbe/scale_2400"> 🧠Очень приятно, Бог🧠</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/4347026/pub_61140e93945daa06bc96419a_61141dbb1bb82e33ef5eb505/scale_1200"> 🎴Моя геройская академия🎴</a></li><br>
+    <li> <a href="https://avatars.mds.yandex.net/get-zen_doc/3707516/pub_61140e93945daa06bc96419a_61141ecc945daa06bcc9a186/scale_1200"> ✏️Чёрный клевер✏️</a></li><br>
+ </ul>
+ </div>
+ </div>
+
+<!--drop down list -->
+ <div class="DL">
+ <!-- list header -->
+ <details class="LH">
+ <summary>👩‍💻 Coding Experiences 👩‍💻</summary>
+ </details>
+
+<!--list body -->
+ <div class="LC">
+
+<div class="CE">
+HTML &nbsp;<br>
+<progress min="0" max="100" value="100"></progress>
+<br><br>
+
+CSS &nbsp; <br>
+<progress min="0" max="100" value="95"></progress>
+<br><br>
+
+Java &nbsp; <br>
+<progress min="0" max="100" value="70"></progress>
+<br><br>
+
+Django &nbsp; <br>
+<progress min="0" max="100" value="80"></progress>
+<br><br>
+
+Python &nbsp; <br>
+<progress min="0" max="100" value="20"></progress>
+<br><br>
+
+Javascript &nbsp; <br>
+<progress min="0" max="100" value="65"></progress>
+
+
+ </div>
+ </div>
+ </div>
+
+ <div class="card">
+ <div class="dp">
+ <img src="https://oldmy.sdu.edu.kz/stud_photo.php?ses=9f2f5a3786bbbce3c8ad8caa117dfaf7&t=123" />
+ </div>
+
+ <p>
+<i>it's me</i><br><br>
+<b>Name:-</b> Amanzhol Nursultan.S.<br><br>
+<b>Hobbies:-</b> Coding, Django_Project and Animedia<br><br>
+<b>Nationality:-</b> Kazakhstan 🇮🇳<br><br>
+<b>Short turm goal:-</b> Get a job in reputed company<br><br>
+<b>Long term goal:-</b> to get achive a good position where i can build my career as well as organization too.
+</p>
+</div>
+<br><br><br>
+
+<script type="text/javascript">
+    var t = ("Hello friends 🙋‍♀️ , I will tell you something about myself now 😌 Firstly I didn't have any interest in coding🙊 But my brother was enthusiastic about starting me coding🙈 Thank You So much my dear brother for pushing me in this field😇 and always being with me ❤️😎 Also thanks to bhai🐯 (joy) for being with me and supporting me in any situation❤️ I had started learning and coding from SoloLearn a few months ago 🙃 Now SL is a very important💖 part of my life 😇 SL has given me a very precious family🙏💕 in which I have a lots of brothers❤️ sisters💕 and friends😎🌷🤗");
+  var w= 0;
+  function type(){
+  document.getElementById("text").innerHTML += t.charAt(w);
+  w++
+  }
+  setInterval(type,120);
+
+</script>
+
+</body>
+</html>

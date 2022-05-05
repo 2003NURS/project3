@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services Section</title>
+    <!-- Font Awesome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+         * {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      .wrapper{
+        position: relative;
+      }
+      section {
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        place-items: center;
+        position: relative;
+        padding: 10px;
+        font-size: 14px;
+      }
+      a{
+        width: 95vw;
+        display: block;
+        position: relative;
+        margin: 25px auto;
+        background-color: #2C7BFE;
+        color: #ffffff;
+        padding: 12px 0;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 20px;
+
+      }
+      .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+      }
+      h2{
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+      }
+      .column {
+        width: 100%;
+        padding: 0 1em 1em 1em;
+        text-align: center;
+      }
+      .card{
+      -webkit-user-select: none;
+        user-select: none;
+        width: 100%;
+        height: 100%;
+        padding: 2em 1.5em;
+        background: -webkit-gradient(linear,left top, left bottom,color-stop(50%, #ffffff),color-stop(50%, #2C7BFE) );
+        background: -o-linear-gradient(#ffffff 50%,#2C7BFE 50% );
+        background: linear-gradient(#ffffff 50%,#2C7BFE 50% );
+        background-size: 100% 200%;
+        background-position: 0 2.5%;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 0 35px rgba(0,0,0,0.12);
+                box-shadow: 0 0 35px rgba(0,0,0,0.12);
+        cursor: pointer;
+      }
+      h3 {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #1f194c;
+        margin: 1em 0;
+      }
+      p {
+        color: #575a7b;
+        font-size: 1em;
+        line-height: 1.6;
+        letter-spacing: 0.03em;
+      }
+      .icon-wrapper {
+        background-color: #2C7BFE;
+        position: relative;
+        margin: auto;
+        height: 2.5em;
+        width: 2.5em;
+        display: -ms-grid;
+        display: grid;
+        place-items: center;
+        font-size: 2.1em;
+        color: #ffffff;
+        border-radius: 50%;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+      }
+      .card:hover{
+        background-position: 0 100%;
+      }
+      .card:hover .icon-wrapper{
+        background-color: #ffffff;
+        color: #2C7BFE;
+      }
+      .card:hover h3{
+        color: #ffffff;
+      }
+      .card:hover p{
+        color: #f0f0f0;
+      }
+      @media screen and (min-width: 768px) {
+        section{
+          padding: 0 2em;
+          font-size: 15px;
+        }
+        a{
+          width: 50vw;
+        }
+        .column{
+            -webkit-box-flex: 0;
+                -ms-flex: 0 50%;
+                    flex: 0 50%;
+            max-width: 50%;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        section{
+          padding: 1em 3em;
+        }
+        .column{
+            -webkit-box-flex: 0;
+                -ms-flex: 0 0 33.33%;
+                    flex: 0 0 33.33%;
+            max-width: 33.33%;
+        }
+      }
+  </style>
+
+  <body>
+   <div class="wrapper">
+      <section>
+      <div class="row">
+        <h2 class="section-heading">Our Services</h2>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="card" onclick="">
+            <div class="icon-wrapper">
+            <i class="fas fa-hammer"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab distinctio quibusdam natus!
+          </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card" onclick="">
+            <div class="icon-wrapper">
+            <i class="fas fa-brush"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab distinctio quibusdam natus!
+          </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card" onclick="">
+            <div class="icon-wrapper">
+           <i class="fas fa-wrench"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab distinctio quibusdam natus!
+          </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+            <i class="fas fa-truck-pickup"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab distinctio quibusdam natus!
+          </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+            <i class="fas fa-broom"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab distinctio quibusdam natus!
+          </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+           <i class="fas fa-plug"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab distinctio quibusdam natus!
+          </p>
+          </div>
+        </div>
+        </section>
+    <a href="https://www.youtube.com/channel/UC51O6gnDzGoSa6JCaFKgUJg" target="_blank">My Youtube Channel</a>
+   </div>
+   <script>alert("Hover on the cards")</script>
+  </body>
+</html>
